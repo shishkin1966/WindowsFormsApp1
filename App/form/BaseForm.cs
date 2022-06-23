@@ -16,7 +16,7 @@ namespace WindowsFormsApp1.App
         private bool _isBusy = false;
         private readonly StringBuilder _comment = new StringBuilder();
         private readonly Secretary<string> _providers = new Secretary<string>();
-        private readonly LifecycleObservable _lifecycleObservable = new LifecycleObservable(Lifecycle.VIEW_CREATE);
+        private readonly LifecycleObservable _lifecycleObservable = new LifecycleObservable(Lifecycle.ON_CREATE);
         private readonly List<IAction> _actions = new List<IAction>();
 
         public void AddAction(IAction action)
@@ -25,15 +25,15 @@ namespace WindowsFormsApp1.App
 
             switch (GetState())
             {
-                case Lifecycle.VIEW_READY:
+                case Lifecycle.ON_READY:
                     if (!action.IsRun())
                     {
                         _actions.Add(action);
                     }
                     DoActions();
                     break;
-                case Lifecycle.VIEW_CREATE:
-                case Lifecycle.VIEW_NOT_READY:
+                case Lifecycle.ON_CREATE:
+                case Lifecycle.ON_START:
                     if (!action.IsRun())
                     {
                         _actions.Add(action);
@@ -47,7 +47,7 @@ namespace WindowsFormsApp1.App
             var deleted = new List<IAction>();
             for (int i = 0; i < _actions.Count; i++)
             {
-                if (GetState() != Lifecycle.VIEW_READY)
+                if (GetState() != Lifecycle.ON_READY)
                 {
                     break;
                 }
@@ -100,7 +100,7 @@ namespace WindowsFormsApp1.App
 
         public void SetState(int state)
         {
-            //
+            //_lifecycleObservable.SetState(state);
         }
 
         public void Stop()
@@ -187,5 +187,19 @@ namespace WindowsFormsApp1.App
             return list;
         }
 
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+            _lifecycleObservable.SetState(Lifecycle.ON_START);
+        }
+
+        private void BaseForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _lifecycleObservable.SetState(Lifecycle.ON_DESTROY);
+        }
+
+        private void BaseForm_Activated(object sender, EventArgs e)
+        {
+            _lifecycleObservable.SetState(Lifecycle.ON_READY);
+        }
     }
 }
