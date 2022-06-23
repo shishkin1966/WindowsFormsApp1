@@ -1,18 +1,23 @@
 ﻿using ClearArchitecture.SL;
-using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
     public class MainModel<MainForm> : AbsModel<MainForm>
     {
-        public MainModel(MainForm form) : base((IModelView<MainForm>)form)
+        public const string NAME = "MainModel";
+
+        public MainModel(MainForm form) : base(NAME, (IModelView<MainForm>)form)
         {
         }
 
-        public override void OnReady()
+        public override void OnStart()
         {
-            MessageBox.Show("MainForm OnReady","Внимание");
+            Program.SL.RegisterSubscriber(this);
         }
 
+        public override void Read(IMessage message)
+        {
+            //
+        }
     }
 }

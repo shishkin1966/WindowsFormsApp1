@@ -25,8 +25,8 @@ namespace WindowsFormsApp1
                         return new ObservableUnion(ObservableUnion.NAME);
                     case MessengerUnion.NAME:
                         return new MessengerUnion(MessengerUnion.NAME);
-                    case PresenterUnion.NAME:
-                        return new PresenterUnion(PresenterUnion.NAME);
+                    case ModelUnion.NAME:
+                        return new ModelUnion(ModelUnion.NAME);
                     default:
                         return default;
                 }

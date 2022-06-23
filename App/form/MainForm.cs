@@ -34,5 +34,11 @@ namespace WindowsFormsApp1.App
         {
             Program.SL.Stop();
         }
+
+        public bool IsValid()
+        {
+            if (GetState() != Lifecycle.ON_DESTROY && GetState() != Lifecycle.ON_CREATE) return true;
+            return false;
+        }
     }
 }

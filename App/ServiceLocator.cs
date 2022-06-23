@@ -57,7 +57,7 @@ namespace WindowsFormsApp1.App
             RegisterProvider(LogProvider.NAME);
             RegisterProvider(MessengerUnion.NAME);
             RegisterProvider(ObservableUnion.NAME);
-            RegisterProvider(PresenterUnion.NAME);
+            RegisterProvider(ModelUnion.NAME);
             RegisterProvider(ExecutorProvider.NAME);
         }
 
