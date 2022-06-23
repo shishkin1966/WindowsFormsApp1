@@ -2,7 +2,7 @@
 
 namespace WindowsFormsApp1.App
 {
-    public partial class MainForm : WindowsFormsApp1.App.BaseForm, IModelView<MainForm>
+    public partial class MainForm : WindowsFormsApp1.App.BaseForm
     {
         private IModel<MainForm> _model;
 

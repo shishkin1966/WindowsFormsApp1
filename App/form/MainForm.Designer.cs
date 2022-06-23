@@ -1,7 +1,8 @@
-﻿
+﻿using ClearArchitecture.SL;
+
 namespace WindowsFormsApp1.App
 {
-    partial class MainForm
+    partial class MainForm : IModelView<MainForm>
     {
         /// <summary>
         /// Обязательная переменная конструктора.
