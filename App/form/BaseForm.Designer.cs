@@ -37,9 +37,9 @@ namespace WindowsFormsApp1.App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(277, 185);
             this.Name = "BaseForm";
-            this.Activated += new System.EventHandler(this.BaseForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseForm_FormClosing);
             this.Load += new System.EventHandler(this.BaseForm_Load);
+            this.Shown += new System.EventHandler(this.BaseForm_Shown);
             this.ResumeLayout(false);
 
         }

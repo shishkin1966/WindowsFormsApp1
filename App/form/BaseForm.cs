@@ -100,7 +100,7 @@ namespace WindowsFormsApp1.App
 
         public void SetState(int state)
         {
-            //_lifecycleObservable.SetState(state);
+            _lifecycleObservable.SetState(state);
         }
 
         public void Stop()
@@ -197,7 +197,7 @@ namespace WindowsFormsApp1.App
             _lifecycleObservable.SetState(Lifecycle.ON_DESTROY);
         }
 
-        private void BaseForm_Activated(object sender, EventArgs e)
+        private void BaseForm_Shown(object sender, EventArgs e)
         {
             _lifecycleObservable.SetState(Lifecycle.ON_READY);
         }

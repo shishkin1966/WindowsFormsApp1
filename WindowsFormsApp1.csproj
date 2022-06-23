@@ -79,6 +79,7 @@
     <Compile Include="App\form\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="App\model\Main\MainModel.cs" />
     <Compile Include="App\provider\ApplicationProvider.cs" />
     <Compile Include="App\provider\IApplicationProvider.cs" />
     <Compile Include="App\ServiceLocator.cs" />
@@ -126,8 +127,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App\model\Main\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
