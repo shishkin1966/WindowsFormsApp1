@@ -51,6 +51,15 @@ namespace WindowsFormsApp1.App
             }
         }
 
+        public IModelUnion Models
+        {
+            get
+            {
+                return (IModelUnion)GetProvider(ModelUnion.NAME);
+            }
+        }
+
+
         public override void Start()
         {
             RegisterProvider(ApplicationProvider.NAME);
