@@ -12,7 +12,14 @@ namespace WindowsFormsApp1.App
 
         public override void OnReady()
         {
-            GetView().BackgroundWorker.RunWorkerAsync();
+            base.OnReady();
+
+            for (int i = 1; i < 6; i++)
+            {
+                Program.SL.App.Wait(300);
+                GetView().ProgressBar.PerformStep();
+            }
+            GetView().Close();
         }
     }
 }

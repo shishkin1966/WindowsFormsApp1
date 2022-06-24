@@ -14,5 +14,17 @@ namespace WindowsFormsApp1.App
         void SetExit();
 
         void OnExit();
+
+        void Wait(double milliseconds);
+
+        void Sleep(int milliseconds);
+
+        string GetApplicationDir();
+
+        string GetApplicationFullPath();
+
+        string GetApplicationName();
+
+        string GetApplicationFileName();
     }
 }

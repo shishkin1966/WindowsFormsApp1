@@ -55,7 +55,6 @@ namespace WindowsFormsApp1.App
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashForm));
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // progressBar1
@@ -65,16 +64,9 @@ namespace WindowsFormsApp1.App
             this.progressBar1.Location = new System.Drawing.Point(0, 427);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(0);
             this.progressBar1.Maximum = 5;
-            this.progressBar1.Value = 0;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(448, 5);
             this.progressBar1.TabIndex = 0;
-            // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.WorkerReportsProgress = true;
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // SplashForm
             // 
@@ -96,7 +88,6 @@ namespace WindowsFormsApp1.App
         #endregion
 
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
 
         public ProgressBar ProgressBar
         {
@@ -107,18 +98,6 @@ namespace WindowsFormsApp1.App
             set
             {
                 progressBar1 = value;
-            }
-        }
-
-        public BackgroundWorker BackgroundWorker
-        {
-            get
-            {
-                return backgroundWorker1;
-            }
-            set
-            {
-                backgroundWorker1 = value;
             }
         }
     }

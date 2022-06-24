@@ -1,5 +1,7 @@
 ﻿using ClearArchitecture.SL;
 using System;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
@@ -24,6 +26,26 @@ namespace WindowsFormsApp1.App
             }
         }
 
+        public string GetApplicationName()
+        {
+            return System.Reflection.Assembly.GetExecutingAssembly().GetName().Name; 
+        }
+
+        public string GetApplicationFullPath()
+        {
+            return System.Reflection.Assembly.GetExecutingAssembly().Location;
+        }
+
+        public string GetApplicationDir()
+        {
+            return System.AppContext.BaseDirectory;
+        }
+
+        public string GetApplicationFileName() 
+        {
+            return System.AppDomain.CurrentDomain.FriendlyName;
+        }
+
         public bool IsExit()
         {
             return _isExit;
@@ -41,5 +63,16 @@ namespace WindowsFormsApp1.App
             OnExit();
         }
 
+        public void Sleep(int milliseconds)
+        {
+            Thread.Sleep(milliseconds);
+        }
+
+        public void Wait(double milliseconds)
+        {
+            DateTime next = System.DateTime.Now.AddMilliseconds(milliseconds);
+            while (next > System.DateTime.Now)
+                Application.DoEvents();
+        }
     }
 }

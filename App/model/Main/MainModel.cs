@@ -18,20 +18,6 @@ namespace WindowsFormsApp1.App
 
             form = new SplashForm();
             form.Show();
-
-            /*
-            form.ProgressBar.Step = 1;
-            form.ProgressBar.Maximum = 5;
-            form.ProgressBar.Value = 0;
-
-            form.ProgressBar.ResumeLayout(false);
-            for (int i = 1; i < 6; i++)
-            {
-                Thread.Sleep(300);
-                form.ProgressBar.PerformStep();
-            }
-            form.Close();
-            */
         }
     }
 }
