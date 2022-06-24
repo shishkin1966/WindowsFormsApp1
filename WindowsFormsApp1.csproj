@@ -90,7 +90,7 @@
     <Compile Include="App\model\Splash\SplashModel.cs" />
     <Compile Include="App\provider\ApplicationProvider.cs" />
     <Compile Include="App\provider\IApplicationProvider.cs" />
-    <Compile Include="App\request\ShowSplashFormRequest.cs" />
+    <Compile Include="App\request\StepSplashFormRequest.cs" />
     <Compile Include="App\ServiceLocator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
