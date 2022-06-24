@@ -21,9 +21,21 @@ namespace WindowsFormsApp1.App
                 form = new SplashForm();
                 form.Show();
 
+
                 if (obj is IRequest requst)
                 {
-                    Thread.Sleep(1000);
+                    form.ProgressBar.Step = 1;
+                    form.ProgressBar.Maximum = 5;
+                    form.ProgressBar.Value = 0;
+
+                    form.ProgressBar.ResumeLayout(false);
+                    for (int i = 1; i < 6; i++)
+                    {
+                        Thread.Sleep(300);
+                        //Thread.Yield();
+                        form.ProgressBar.PerformStep();
+                    }
+
                     SetResult(new ExtResult(requst.GetData()));
                 }
             }

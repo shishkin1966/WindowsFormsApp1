@@ -1,5 +1,6 @@
 ﻿
 using ClearArchitecture.SL;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
@@ -52,7 +53,19 @@ namespace WindowsFormsApp1.App
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashForm));
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar1.Location = new System.Drawing.Point(0, 427);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(0);
+            this.progressBar1.Maximum = 5;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(448, 5);
+            this.progressBar1.TabIndex = 0;
             // 
             // SplashForm
             // 
@@ -61,6 +74,7 @@ namespace WindowsFormsApp1.App
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(448, 432);
             this.ControlBox = false;
+            this.Controls.Add(this.progressBar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SplashForm";
             this.ShowInTaskbar = false;
@@ -71,5 +85,19 @@ namespace WindowsFormsApp1.App
         }
 
         #endregion
+
+        private System.Windows.Forms.ProgressBar progressBar1;
+
+        public ProgressBar ProgressBar
+        {
+            get
+            {
+                return progressBar1;
+            }
+            set
+            {
+                progressBar1 = value;
+            }
+        }
     }
 }
