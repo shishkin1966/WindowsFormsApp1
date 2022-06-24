@@ -16,5 +16,10 @@ namespace WindowsFormsApp1.App
         public override void Read(IMessage message)
         {
         }
+
+        public override void OnDestroy()
+        {
+            Program.SL.UnRegisterSubscriber(this);
+        }
     }
 }

@@ -1,11 +1,11 @@
 ﻿using ClearArchitecture.SL;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
     public partial class MainForm : WindowsFormsApp1.App.BaseForm
     {
         private IModel<MainForm> _model;
-
         public MainForm()
         {
             SetModel(new MainModel<MainForm>(this));
@@ -39,6 +39,14 @@ namespace WindowsFormsApp1.App
         {
             if (GetState() != Lifecycle.ON_DESTROY && GetState() != Lifecycle.ON_CREATE) return true;
             return false;
+        }
+
+        private void OpenMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var form = new DocumentForm();
+            form.MdiParent = this;
+            form.WindowState = FormWindowState.Normal;
+            form.Show();
         }
     }
 }

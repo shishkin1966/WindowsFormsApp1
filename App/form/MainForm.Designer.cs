@@ -53,6 +53,7 @@ namespace WindowsFormsApp1.App
             this.OpenMenuItem.Name = "OpenMenuItem";
             this.OpenMenuItem.Size = new System.Drawing.Size(66, 20);
             this.OpenMenuItem.Text = "Открыть";
+            this.OpenMenuItem.Click += new System.EventHandler(this.OpenMenuItem_Click);
             // 
             // ExitMenuItem
             // 

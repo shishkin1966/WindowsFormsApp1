@@ -70,7 +70,7 @@ namespace WindowsFormsApp1.App
             RegisterProvider(ExecutorProvider.NAME);
         }
 
-        new public void Stop()
+        public override void Stop()
         {
             App.SetExit();
 

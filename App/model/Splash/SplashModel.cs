@@ -21,6 +21,5 @@ namespace WindowsFormsApp1.App
             }
             GetView().Close();
         }
-
     }
 }

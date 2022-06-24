@@ -69,5 +69,6 @@ namespace WindowsFormsApp1.App
         {
             _lifecycleObservable.SetState(Lifecycle.ON_READY);
         }
+
     }
 }

@@ -50,6 +50,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WindowsFormsApp1.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClearArchitecture">
       <HintPath>..\ClearArchitecture\bin\Release\netstandard2.0\ClearArchitecture.dll</HintPath>
@@ -73,6 +76,12 @@
     <Compile Include="App\form\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="App\form\DocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\form\DocumentForm.Designer.cs">
+      <DependentUpon>DocumentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="App\form\IProgressBar.cs" />
     <Compile Include="App\form\SplashForm.cs">
       <SubType>Form</SubType>
@@ -87,6 +96,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="App\model\BaseModel.cs" />
+    <Compile Include="App\model\Document\DocumentModel.cs" />
     <Compile Include="App\model\Main\MainModel.cs" />
     <Compile Include="App\model\Splash\SplashModel.cs" />
     <Compile Include="App\provider\ApplicationProvider.cs" />
@@ -98,6 +108,9 @@
     <Compile Include="App\ProviderFactory.cs" />
     <EmbeddedResource Include="App\form\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\form\DocumentForm.resx">
+      <DependentUpon>DocumentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="App\form\SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>
