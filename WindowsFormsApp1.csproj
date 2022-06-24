@@ -85,6 +85,7 @@
     <Compile Include="App\form\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="App\model\BaseModel.cs" />
     <Compile Include="App\model\Main\MainModel.cs" />
     <Compile Include="App\model\Splash\SplashModel.cs" />
     <Compile Include="App\provider\ApplicationProvider.cs" />
