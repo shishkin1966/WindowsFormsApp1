@@ -17,9 +17,10 @@ namespace WindowsFormsApp1.App
             for (int i = 1; i < 6; i++)
             {
                 Program.SL.App.Wait(300);
-                GetView().ProgressBar.PerformStep();
+                GetView().PerformStep();
             }
             GetView().Close();
         }
+
     }
 }

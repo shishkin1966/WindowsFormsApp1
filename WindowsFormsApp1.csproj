@@ -73,6 +73,7 @@
     <Compile Include="App\form\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="App\form\IProgressBar.cs" />
     <Compile Include="App\form\SplashForm.cs">
       <SubType>Form</SubType>
     </Compile>

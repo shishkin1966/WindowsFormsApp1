@@ -1,11 +1,10 @@
 ﻿
 using ClearArchitecture.SL;
-using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
-    partial class SplashForm : IModelView<SplashForm>
+    partial class SplashForm : IModelView<SplashForm>, IProgressBar
     {
         private IModel<SplashForm> _model;
 
@@ -85,6 +84,11 @@ namespace WindowsFormsApp1.App
 
         }
 
+        public void PerformStep()
+        {
+            ProgressBar.PerformStep();
+        }
+
         #endregion
 
         private System.Windows.Forms.ProgressBar progressBar1;
@@ -94,10 +98,6 @@ namespace WindowsFormsApp1.App
             get
             {
                 return progressBar1;
-            }
-            set
-            {
-                progressBar1 = value;
             }
         }
     }
