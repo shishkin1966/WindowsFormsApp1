@@ -35,7 +35,5 @@ namespace WindowsFormsApp1.App
             if (GetState() != Lifecycle.ON_DESTROY && GetState() != Lifecycle.ON_CREATE) return true;
             return false;
         }
-
-
     }
 }

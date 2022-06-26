@@ -35,11 +35,11 @@ namespace WindowsFormsApp1.App
             }
         }
 
-        public IExecutorProvider Executor
+        public IExecutorUnion Executor
         {
             get
             {
-                return (IExecutorProvider)GetProvider(ExecutorProvider.NAME);
+                return (IExecutorUnion)GetProvider(ExecutorUnion.NAME);
             }
         }
 
@@ -67,7 +67,7 @@ namespace WindowsFormsApp1.App
             RegisterProvider(MessengerUnion.NAME);
             RegisterProvider(ObservableUnion.NAME);
             RegisterProvider(ModelUnion.NAME);
-            RegisterProvider(ExecutorProvider.NAME);
+            RegisterProvider(ExecutorUnion.NAME);
         }
 
         public override void Stop()

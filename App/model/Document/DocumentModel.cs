@@ -9,5 +9,13 @@ namespace WindowsFormsApp1.App
         public DocumentModel(DocumentForm form) : base(NAME, (IModelView<T>)form)
         {
         }
+
+        public override void OnStart()
+        {
+            base.OnStart();
+
+            GetView().ShowProgressBar();
+            //CompuMaster.Data.DataQuery.AnyIDataProvider.FillDataTable();
+        }
     }
 }

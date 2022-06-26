@@ -19,8 +19,8 @@ namespace WindowsFormsApp1
                         return new ApplicationProvider(ApplicationProvider.NAME);
                     case LogProvider.NAME:
                         return new LogProvider(LogProvider.NAME);
-                    case ExecutorProvider.NAME:
-                        return new ExecutorProvider(ExecutorProvider.NAME);
+                    case ExecutorUnion.NAME:
+                        return new ExecutorUnion(ExecutorUnion.NAME);
                     case ObservableUnion.NAME:
                         return new ObservableUnion(ObservableUnion.NAME);
                     case MessengerUnion.NAME:

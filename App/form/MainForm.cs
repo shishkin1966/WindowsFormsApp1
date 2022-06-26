@@ -43,10 +43,19 @@ namespace WindowsFormsApp1.App
 
         private void OpenMenuItem_Click(object sender, System.EventArgs e)
         {
-            var form = new DocumentForm();
-            form.MdiParent = this;
-            form.WindowState = FormWindowState.Normal;
-            form.Show();
+            var model = Program.SL.Models.GetModel(DocumentModel<DocumentForm>.NAME);
+            if (model == null) {
+                var form = new DocumentForm
+                {
+                    MdiParent = this
+                };
+                form.Dock = DockStyle.Fill;
+                form.Show();
+            } 
+            else
+            {
+                ((DocumentModel<DocumentForm>)model).GetView().Focus();
+            }
         }
     }
 }

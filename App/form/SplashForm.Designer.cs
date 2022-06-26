@@ -84,7 +84,7 @@ namespace WindowsFormsApp1.App
 
         }
 
-        public void PerformStep()
+        public void StepProgressBar()
         {
             ProgressBar.PerformStep();
         }
