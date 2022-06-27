@@ -49,13 +49,33 @@ namespace WindowsFormsApp1.App
                 {
                     MdiParent = this
                 };
-                form.Dock = DockStyle.Fill;
                 form.Show();
             } 
             else
             {
                 ((DocumentModel<DocumentForm>)model).GetView().Focus();
             }
+        }
+
+
+        private void cascadeToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            this.LayoutMdi(System.Windows.Forms.MdiLayout.Cascade);
+        }
+
+        private void hToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            this.LayoutMdi(System.Windows.Forms.MdiLayout.TileVertical);
+        }
+
+        private void vToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            this.LayoutMdi(System.Windows.Forms.MdiLayout.TileHorizontal);
+        }
+
+        private void nToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            this.LayoutMdi(System.Windows.Forms.MdiLayout.ArrangeIcons);
         }
     }
 }
