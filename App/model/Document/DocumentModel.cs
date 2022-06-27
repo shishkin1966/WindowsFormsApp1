@@ -22,6 +22,7 @@ namespace WindowsFormsApp1.App
             GetView().HideProgressBar();
 
             GetView().ShowProgressBar();
+            GetView().SetStatus("Загрузка ...");
             Program.SL.Executor.PutRequest(new GetDocumentsRequest(connection, NAME, NAME, 0));
         }
 
@@ -37,7 +38,10 @@ namespace WindowsFormsApp1.App
                 if (result.GetName() == GetDocumentsRequest.NAME) 
                 {
                     DataSet ds = (DataSet)result.GetData();
+                    GetView().DataGridView.ReadOnly = true;
+                    GetView().DataGridView.AllowUserToAddRows = false;
                     GetView().DataGridView.DataSource = ds.Tables["Posts"];
+                    GetView().SetStatus("Всего: "+GetView().DataGridView.RowCount.ToString()+" строк(а)");
                 }
             }
         }

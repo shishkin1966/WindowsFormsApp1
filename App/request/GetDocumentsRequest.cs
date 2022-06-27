@@ -18,6 +18,7 @@ namespace WindowsFormsApp1.App
 
         public override void Execute(object obj)
         {
+            Program.SL.App.Wait(5000);
             try
             {
                 if (obj is IRequest requst)
