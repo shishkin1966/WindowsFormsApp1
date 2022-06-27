@@ -34,8 +34,11 @@ namespace WindowsFormsApp1.App
             }
             else
             {
-                DataSet ds = (DataSet)result.GetData();
-                GetView().DataGridView.DataSource = ds.Tables["Posts"];
+                if (result.GetName() == GetDocumentsRequest.NAME) 
+                {
+                    DataSet ds = (DataSet)result.GetData();
+                    GetView().DataGridView.DataSource = ds.Tables["Posts"];
+                }
             }
         }
     }

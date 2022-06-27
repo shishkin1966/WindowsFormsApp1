@@ -9,7 +9,7 @@ namespace WindowsFormsApp1.App
     {
         public const string NAME = "GetDocumentsRequest";
         private readonly SqlConnection _connection;
-        private readonly ExtResult _result = new ExtResult();
+        private readonly ExtResult _result = new ExtResult().SetName(NAME);
 
         public GetDocumentsRequest(SqlConnection connection, string sender, string receiver, object obj) : base(sender, receiver, obj)
         {
