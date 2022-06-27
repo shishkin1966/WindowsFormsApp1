@@ -1,5 +1,6 @@
 ﻿
 using ClearArchitecture.SL;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App

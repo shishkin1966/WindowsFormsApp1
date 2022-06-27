@@ -32,7 +32,7 @@ namespace WindowsFormsApp1.App
             catch (Exception e)
             {
                 Program.SL.Log.AddError(new ExtError().AddError(GetName(), e));
-                SetResult(_result.SetError(new ExtError(this.GetSender(), e)));
+                SetResult(_result.SetError(new ExtError(GetName(), e)));
             }
             finally
             {
