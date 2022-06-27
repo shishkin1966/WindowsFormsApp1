@@ -1,10 +1,12 @@
 ﻿using ClearArchitecture.SL;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp1.App
 {
     public class DocumentModel<T> : BaseModel<T> where T : DocumentForm
     {
         public const string NAME = "DocumentModel";
+        private SqlConnection _connection;
 
         public DocumentModel(DocumentForm form) : base(NAME, (IModelView<T>)form)
         {
@@ -15,7 +17,13 @@ namespace WindowsFormsApp1.App
             base.OnStart();
 
             GetView().ShowProgressBar();
-            //CompuMaster.Data.DataQuery.AnyIDataProvider.FillDataTable();
+            _connection = Program.SL.DB.GetDb(new DbConficuration(NAME));
+            GetView().HideProgressBar();
+        }
+
+        public override void OnDestroy()
+        {
+            Program.SL.DB.Disconnect(NAME);
         }
     }
 }

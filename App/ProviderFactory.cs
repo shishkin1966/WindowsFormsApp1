@@ -27,6 +27,8 @@ namespace WindowsFormsApp1
                         return new MessengerUnion(MessengerUnion.NAME);
                     case ModelUnion.NAME:
                         return new ModelUnion(ModelUnion.NAME);
+                    case DbProvider.NAME:
+                        return new DbProvider(DbProvider.NAME);
                     default:
                         return default;
                 }

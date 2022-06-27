@@ -58,6 +58,13 @@ namespace WindowsFormsApp1.App
                 return (IModelUnion)GetProvider(ModelUnion.NAME);
             }
         }
+        public IDbProvider DB
+        {
+            get
+            {
+                return (IDbProvider)GetProvider(DbProvider.NAME);
+            }
+        }
 
 
         public override void Start()
@@ -68,6 +75,7 @@ namespace WindowsFormsApp1.App
             RegisterProvider(ObservableUnion.NAME);
             RegisterProvider(ModelUnion.NAME);
             RegisterProvider(ExecutorUnion.NAME);
+            RegisterProvider(DbProvider.NAME);
         }
 
         public override void Stop()
