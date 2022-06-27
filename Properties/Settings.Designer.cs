@@ -22,5 +22,16 @@ namespace WindowsFormsApp1.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=OSHISHKINPC;Initial Catalog=StackOverflow2010;Integrated Security=Tru" +
+            "e")]
+        public string StackOverflow2010ConnectionString {
+            get {
+                return ((string)(this["StackOverflow2010ConnectionString"]));
+            }
+        }
     }
 }

@@ -1,12 +1,13 @@
 ﻿using ClearArchitecture.SL;
+using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
-    public class DocumentModel<T> : BaseModel<T> where T : DocumentForm
+    public class DocumentModel<T> : ResponseModel<T> where T : DocumentForm
     {
         public const string NAME = "DocumentModel";
-        private SqlConnection _connection;
 
         public DocumentModel(DocumentForm form) : base(NAME, (IModelView<T>)form)
         {
@@ -17,13 +18,25 @@ namespace WindowsFormsApp1.App
             base.OnStart();
 
             GetView().ShowProgressBar();
-            _connection = Program.SL.DB.GetDb(new DbConficuration(NAME));
+            var connection = Program.SL.DB.GetDb(new DbConficuration(ApplicationProvider.DBNAME));
             GetView().HideProgressBar();
+
+            GetView().ShowProgressBar();
+            Program.SL.Executor.PutRequest(new GetDocumentsRequest(connection, NAME, NAME, 0));
         }
 
-        public override void OnDestroy()
+        public override void OnUpdateUI(ExtResult result)
         {
-            Program.SL.DB.Disconnect(NAME);
+            GetView().HideProgressBar();
+            if (result.HasError())
+            {
+                MessageBox.Show("Ошибка", result.GetErrorText());
+            }
+            else
+            {
+                DataSet ds = (DataSet)result.GetData();
+                GetView().DataGridView.DataSource = ds.Tables["Posts"];
+            }
         }
     }
 }

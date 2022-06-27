@@ -9,6 +9,7 @@ namespace WindowsFormsApp1.App
     {
         public const string NAME = "ApplicationProvider";
         private bool _isExit = false;
+        public const string DBNAME = "DB";
 
         public ApplicationProvider(string name) : base(name)
         {
