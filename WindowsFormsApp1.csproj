@@ -107,6 +107,12 @@
     <Compile Include="App\form\DocumentForm.Designer.cs">
       <DependentUpon>DocumentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="App\form\NewsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\form\NewsForm.Designer.cs">
+      <DependentUpon>NewsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="App\form\Forms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,11 +135,14 @@
     <Compile Include="App\model\Document\DocumentModel.cs" />
     <Compile Include="App\model\Forms\FormsModel.cs" />
     <Compile Include="App\model\Main\MainModel.cs" />
+    <Compile Include="App\model\News\NewsModel.cs" />
     <Compile Include="App\model\ResponseModel.cs" />
     <Compile Include="App\model\Splash\SplashModel.cs" />
     <Compile Include="App\provider\ApplicationProvider.cs" />
     <Compile Include="App\provider\IApplicationProvider.cs" />
+    <Compile Include="App\request\BaseRequest.cs" />
     <Compile Include="App\request\GetDocumentsRequest.cs" />
+    <Compile Include="App\request\GetNewsRequest.cs" />
     <Compile Include="App\ServiceLocator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="App\form\Forms.resx">
       <DependentUpon>Forms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\form\NewsForm.resx">
+      <DependentUpon>NewsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="App\form\SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>

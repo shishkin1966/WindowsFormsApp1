@@ -38,8 +38,9 @@ namespace WindowsFormsApp1.App
             this.hToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.newsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +48,7 @@ namespace WindowsFormsApp1.App
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OpenMenuItem,
+            this.newsToolStripMenuItem,
             this.ExitMenuItem,
             this.windowsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -58,8 +60,8 @@ namespace WindowsFormsApp1.App
             // OpenMenuItem
             // 
             this.OpenMenuItem.Name = "OpenMenuItem";
-            this.OpenMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.OpenMenuItem.Text = "Открыть";
+            this.OpenMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.OpenMenuItem.Text = "Документы";
             this.OpenMenuItem.Click += new System.EventHandler(this.OpenMenuItem_Click);
             // 
             // ExitMenuItem
@@ -86,30 +88,37 @@ namespace WindowsFormsApp1.App
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.cascadeToolStripMenuItem.Text = "Каскадно";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
             // 
             // hToolStripMenuItem
             // 
             this.hToolStripMenuItem.Name = "hToolStripMenuItem";
-            this.hToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.hToolStripMenuItem.Text = "Горизонтально";
             this.hToolStripMenuItem.Click += new System.EventHandler(this.hToolStripMenuItem_Click);
             // 
             // vToolStripMenuItem
             // 
             this.vToolStripMenuItem.Name = "vToolStripMenuItem";
-            this.vToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.vToolStripMenuItem.Text = "Вертикально";
             this.vToolStripMenuItem.Click += new System.EventHandler(this.vToolStripMenuItem_Click);
             // 
             // nToolStripMenuItem
             // 
             this.nToolStripMenuItem.Name = "nToolStripMenuItem";
-            this.nToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.nToolStripMenuItem.Text = "Нормально";
             this.nToolStripMenuItem.Click += new System.EventHandler(this.nToolStripMenuItem_Click);
+            // 
+            // listToolStripMenuItem
+            // 
+            this.listToolStripMenuItem.Name = "listToolStripMenuItem";
+            this.listToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.listToolStripMenuItem.Text = "Список";
+            this.listToolStripMenuItem.Click += new System.EventHandler(this.listToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -119,12 +128,12 @@ namespace WindowsFormsApp1.App
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // listToolStripMenuItem
+            // newsToolStripMenuItem
             // 
-            this.listToolStripMenuItem.Name = "listToolStripMenuItem";
-            this.listToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.listToolStripMenuItem.Text = "Список";
-            this.listToolStripMenuItem.Click += new System.EventHandler(this.listToolStripMenuItem_Click);
+            this.newsToolStripMenuItem.Name = "newsToolStripMenuItem";
+            this.newsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.newsToolStripMenuItem.Text = "Новости";
+            this.newsToolStripMenuItem.Click += new System.EventHandler(this.newsToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -156,5 +165,6 @@ namespace WindowsFormsApp1.App
         private System.Windows.Forms.ToolStripMenuItem vToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newsToolStripMenuItem;
     }
 }

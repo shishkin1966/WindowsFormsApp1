@@ -2,28 +2,29 @@
 
 namespace WindowsFormsApp1.App
 {
-    public partial class DocumentForm : WindowsFormsApp1.App.BaseForm
+    public partial class NewsForm : WindowsFormsApp1.App.BaseForm
     {
-        private IModel<DocumentForm> _model;
+        public const string NAME = "NewsForm";
+        private IModel<NewsForm> _model;
 
-        public DocumentForm()
+        public NewsForm()
         {
-            SetModel(new DocumentModel<DocumentForm>(this));
+            SetModel(new NewsModel<NewsForm>(this));
 
             InitializeComponent();
         }
 
         public override string GetName()
         {
-            return "DocumentForm";
+            return NAME;
         }
 
-        public IModel<DocumentForm> GetModel()
+        public IModel<NewsForm> GetModel()
         {
             return _model;
         }
 
-        public void SetModel(IModel<DocumentForm> model)
+        public void SetModel(IModel<NewsForm> model)
         {
             base.RemoveLifecycleObserver(_model);
             _model = model;

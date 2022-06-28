@@ -1,14 +1,15 @@
-﻿using ClearArchitecture.SL;
+﻿
+using ClearArchitecture.SL;
 using System.Data;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
-    public class DocumentModel<T> : ResponseModel<T> where T : DocumentForm
+    public class NewsModel<T> : ResponseModel<T> where T : NewsForm
     {
-        public const string NAME = "DocumentModel";
+        public const string NAME = "NewsModel";
 
-        public DocumentModel(DocumentForm form) : base(NAME, (IModelView<T>)form)
+        public NewsModel(NewsForm form) : base(NAME, (IModelView<T>)form)
         {
         }
 
@@ -27,8 +28,9 @@ namespace WindowsFormsApp1.App
 
             GetView().ShowProgressBar();
             GetView().SetStatus("Загрузка ...");
-            Program.SL.Executor.PutRequest(new GetDocumentsRequest(connection, NAME, NAME, 0));
+            Program.SL.Executor.PutRequest(new GetNewsRequest(connection, NAME, NAME, 0));
         }
+
 
         public override void OnUpdateUI(ExtResult result)
         {
@@ -39,13 +41,13 @@ namespace WindowsFormsApp1.App
             }
             else
             {
-                if (result.GetName() == GetDocumentsRequest.NAME) 
+                if (result.GetName() == GetNewsRequest.NAME)
                 {
                     DataSet ds = (DataSet)result.GetData();
                     GetView().DataGridView.ReadOnly = true;
                     GetView().DataGridView.AllowUserToAddRows = false;
-                    GetView().DataGridView.DataSource = ds.Tables["Posts"];
-                    GetView().SetStatus("Всего: "+GetView().DataGridView.RowCount.ToString()+" строк(а)");
+                    GetView().DataGridView.DataSource = ds.Tables["Comments"];
+                    GetView().SetStatus("Всего: " + GetView().DataGridView.RowCount.ToString() + " строк(а)");
                 }
             }
         }

@@ -1,12 +1,11 @@
 ﻿using ClearArchitecture.SL;
-using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
     public partial class MainForm : WindowsFormsApp1.App.BaseForm
     {
         private IModel<MainForm> _model;
+
         public MainForm()
         {
             SetModel(new MainModel<MainForm>(this));
@@ -34,12 +33,6 @@ namespace WindowsFormsApp1.App
         private void ExitMenuItem_Click(object sender, System.EventArgs e)
         {
             Program.SL.Stop();
-        }
-
-        public bool IsValid()
-        {
-            if (GetState() != Lifecycle.ON_DESTROY && GetState() != Lifecycle.ON_CREATE) return true;
-            return false;
         }
 
         private void OpenMenuItem_Click(object sender, System.EventArgs e)
@@ -93,6 +86,23 @@ namespace WindowsFormsApp1.App
             else
             {
                 ((FormsModel<Forms>)model).GetView().Focus();
+            }
+        }
+
+        private void newsToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var model = Program.SL.Models.GetModel(NewsModel<NewsForm>.NAME);
+            if (model == null)
+            {
+                var form = new NewsForm
+                {
+                    MdiParent = this
+                };
+                form.Show();
+            }
+            else
+            {
+                ((NewsModel<NewsForm>)model).GetView().Focus();
             }
         }
     }

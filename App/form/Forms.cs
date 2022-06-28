@@ -31,12 +31,6 @@ namespace WindowsFormsApp1.App
             base.AddLifecycleObserver(_model);
         }
 
-        public bool IsValid()
-        {
-            if (GetState() != Lifecycle.ON_DESTROY && GetState() != Lifecycle.ON_CREATE) return true;
-            return false;
-        }
-
         private void listBox1_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             int index = this.listBox1.IndexFromPoint(e.Location);

@@ -70,5 +70,10 @@ namespace WindowsFormsApp1.App
             _lifecycleObservable.SetState(Lifecycle.ON_READY);
         }
 
+        public bool IsValid()
+        {
+            if (GetState() != Lifecycle.ON_DESTROY && GetState() != Lifecycle.ON_CREATE) return true;
+            return false;
+        }
     }
 }

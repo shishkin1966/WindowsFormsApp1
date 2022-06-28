@@ -5,12 +5,12 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApp1.App
 {
-    public class GetDocumentsRequest : BaseRequest
+    public class GetNewsRequest : BaseRequest
     {
-        public const string NAME = "GetDocumentsRequest";
+        public const string NAME = "GetNewsRequest";
         private readonly ExtResult _result = new ExtResult().SetName(NAME);
 
-        public GetDocumentsRequest(SqlConnection connection, string sender, string receiver, object obj) : base(connection, sender, receiver, obj)
+        public GetNewsRequest(SqlConnection connection, string sender, string receiver, object obj) : base(connection, sender, receiver, obj)
         {
         }
 
@@ -20,9 +20,9 @@ namespace WindowsFormsApp1.App
             {
                 if (obj is IRequest requst)
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter("select top 50 * from Posts", Connection);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter("select top 100 * from Comments", Connection);
                     DataSet ds = new DataSet(NAME);
-                    dataAdapter.Fill(ds, "Posts");
+                    dataAdapter.Fill(ds, "Comments");
                     _result.SetData(ds);
                     SetResult(_result);
                 }
@@ -42,11 +42,6 @@ namespace WindowsFormsApp1.App
         public override string GetName()
         {
             return NAME;
-        }
-
-        public override void SendResult()
-        {
-            Program.SL.Messenger.AddNotMandatoryMessage(new ResultMessage(GetReceiver(), GetResult()));
         }
     }
 }

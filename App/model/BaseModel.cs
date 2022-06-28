@@ -1,4 +1,5 @@
 ﻿using ClearArchitecture.SL;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
@@ -15,6 +16,13 @@ namespace WindowsFormsApp1.App
 
         public override void Read(IMessage message)
         {
+            if (message.GetName() == SetFocusMessage.NAME)
+            {
+                if (GetView() is Control)
+                {
+                    (GetView() as Control).Focus();
+                }
+            }
         }
 
         public override void OnDestroy()

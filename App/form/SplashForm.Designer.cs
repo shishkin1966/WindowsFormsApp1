@@ -18,12 +18,6 @@ namespace WindowsFormsApp1.App
             return _model;
         }
 
-        public bool IsValid()
-        {
-            if (GetState() != Lifecycle.ON_DESTROY && GetState() != Lifecycle.ON_CREATE) return true;
-            return false;
-        }
-
         public void SetModel(IModel<SplashForm> model)
         {
             base.RemoveLifecycleObserver(_model);
