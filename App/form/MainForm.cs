@@ -1,4 +1,5 @@
 ﻿using ClearArchitecture.SL;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
@@ -76,6 +77,23 @@ namespace WindowsFormsApp1.App
         private void nToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             this.LayoutMdi(System.Windows.Forms.MdiLayout.ArrangeIcons);
+        }
+
+        private void listToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var model = Program.SL.Models.GetModel(FormsModel<Forms>.NAME);
+            if (model == null)
+            {
+                var form = new Forms
+                {
+                    MdiParent = this
+                };
+                form.Show();
+            }
+            else
+            {
+                ((FormsModel<Forms>)model).GetView().Focus();
+            }
         }
     }
 }

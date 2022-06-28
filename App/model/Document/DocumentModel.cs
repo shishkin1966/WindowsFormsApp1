@@ -1,6 +1,5 @@
 ﻿using ClearArchitecture.SL;
 using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
@@ -11,6 +10,11 @@ namespace WindowsFormsApp1.App
 
         public DocumentModel(DocumentForm form) : base(NAME, (IModelView<T>)form)
         {
+        }
+
+        public override string GetTitle()
+        {
+            return GetView().Text;
         }
 
         public override void OnStart()
@@ -45,5 +49,14 @@ namespace WindowsFormsApp1.App
                 }
             }
         }
+
+        public override void Read(IMessage message)
+        {
+            if (message.GetName() == SetFocusMessage.NAME)
+            {
+                GetView().Focus();
+            }
+        }
+
     }
 }

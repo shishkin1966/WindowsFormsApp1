@@ -107,6 +107,12 @@
     <Compile Include="App\form\DocumentForm.Designer.cs">
       <DependentUpon>DocumentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="App\form\Forms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\form\Forms.Designer.cs">
+      <DependentUpon>Forms.cs</DependentUpon>
+    </Compile>
     <Compile Include="App\form\SplashForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,7 @@
     </Compile>
     <Compile Include="App\model\BaseModel.cs" />
     <Compile Include="App\model\Document\DocumentModel.cs" />
+    <Compile Include="App\model\Forms\FormsModel.cs" />
     <Compile Include="App\model\Main\MainModel.cs" />
     <Compile Include="App\model\ResponseModel.cs" />
     <Compile Include="App\model\Splash\SplashModel.cs" />
@@ -136,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="App\form\DocumentForm.resx">
       <DependentUpon>DocumentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\form\Forms.resx">
+      <DependentUpon>Forms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="App\form\SplashForm.resx">
       <DependentUpon>SplashForm.cs</DependentUpon>

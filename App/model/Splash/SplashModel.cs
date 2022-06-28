@@ -10,6 +10,11 @@ namespace WindowsFormsApp1.App
         {
         }
 
+        public override string GetTitle()
+        {
+            return GetView().Text;
+        }
+
         public override void OnReady()
         {
             base.OnReady();

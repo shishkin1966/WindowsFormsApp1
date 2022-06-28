@@ -10,12 +10,17 @@ namespace WindowsFormsApp1.App
         {
         }
 
+        public override string GetTitle()
+        {
+            return "";
+        }
+
         public override void OnStart()
         {
             base.OnStart();
 
             var form = new SplashForm();
-            form.Show();
+            form.ShowDialog();
         }
     }
 }
