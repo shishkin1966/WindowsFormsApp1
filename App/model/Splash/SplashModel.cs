@@ -21,7 +21,7 @@ namespace WindowsFormsApp1.App
 
             for (int i = 1; i < 6; i++)
             {
-                Program.SL.App.Wait(300);
+                Program.SL.App.Wait(150);
                 GetView().StepProgressBar();
             }
             GetView().Close();
