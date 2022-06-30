@@ -42,6 +42,10 @@ namespace WindowsFormsApp1.App
                     Program.SL.Messenger.AddNotMandatoryMessage(new SetFocusMessage(model.GetName()));
                     this.Close();
                 }
+                else
+                {
+                    (_model as FormsModel<Forms>).Retrieve();
+                }
 
             }
         }
