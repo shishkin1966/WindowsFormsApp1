@@ -91,5 +91,29 @@ namespace WindowsFormsApp1.App
         {
             return new ProviderFactory();
         }
+
+        public override bool RegisterSubscriber(IProviderSubscriber subscriber)
+        {
+            if (subscriber == null) return true;
+
+            if (!base.RegisterSubscriber(subscriber)) return false;
+            if (subscriber is IObservableSubscriber)
+            {
+                return Observable.RegisterSubscriber(subscriber);
+            }
+            return true;
+        }
+
+        public override void UnRegisterSubscriber(IProviderSubscriber subscriber)
+        {
+            if (subscriber == null) return;
+
+            base.UnRegisterSubscriber(subscriber);
+            if (subscriber is IObservableSubscriber)
+            {
+                Observable.UnRegisterSubscriber(subscriber);
+            }
+        }
+
     }
 }

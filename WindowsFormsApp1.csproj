@@ -134,6 +134,7 @@
     <Compile Include="App\model\BaseModel.cs" />
     <Compile Include="App\model\Document\DocumentModel.cs" />
     <Compile Include="App\model\Forms\FormsModel.cs" />
+    <Compile Include="App\model\Forms\FormsModelObservable.cs" />
     <Compile Include="App\model\Main\MainModel.cs" />
     <Compile Include="App\model\News\NewsModel.cs" />
     <Compile Include="App\model\ResponseModel.cs" />

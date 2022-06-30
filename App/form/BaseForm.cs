@@ -1,7 +1,5 @@
 ﻿using ClearArchitecture.SL;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
