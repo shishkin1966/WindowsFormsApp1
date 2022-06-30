@@ -17,7 +17,10 @@ namespace WindowsFormsApp1.App
             var model = Program.SL.Models.GetModel(FormsModel<Forms>.NAME) as FormsModel<Forms>;
             if (model != null)
             {
-                model.Retrieve();
+                if (model.IsValid())
+                {
+                    model.Retrieve();
+                }
             }
         }
 
@@ -28,7 +31,10 @@ namespace WindowsFormsApp1.App
             var model = Program.SL.Models.GetModel(FormsModel<Forms>.NAME) as FormsModel<Forms>;
             if (model != null)
             {
-                model.Retrieve();
+                if (model.IsValid())
+                {
+                    model.Retrieve();
+                }
             }
         }
 
