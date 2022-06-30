@@ -12,7 +12,7 @@ namespace WindowsFormsApp1.App
 
         public override void OnRegisterObserver(IObservableSubscriber subscriber)
         {
-            base.OnRegisterFirstObserver();
+            base.OnRegisterObserver(subscriber);
 
             var model = Program.SL.Models.GetModel(FormsModel<Forms>.NAME) as FormsModel<Forms>;
             if (model != null)
@@ -23,7 +23,7 @@ namespace WindowsFormsApp1.App
 
         public override void OnUnRegisterObserver(IObservableSubscriber subscriber)
         {
-            base.OnUnRegisterLastObserver();
+            base.OnUnRegisterObserver(subscriber);
 
             var model = Program.SL.Models.GetModel(FormsModel<Forms>.NAME) as FormsModel<Forms>;
             if (model != null)
