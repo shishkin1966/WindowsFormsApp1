@@ -1,4 +1,5 @@
 ﻿using ClearArchitecture.SL;
+using System;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
@@ -69,6 +70,8 @@ namespace WindowsFormsApp1.App
 
         public override void Start()
         {
+            Console.WriteLine(DateTime.Now.ToString("G") + ": " + "Старт SL");
+
             RegisterProvider(ApplicationProvider.NAME);
             RegisterProvider(LogProvider.NAME);
             RegisterProvider(MessengerUnion.NAME);
@@ -83,6 +86,8 @@ namespace WindowsFormsApp1.App
             App.SetExit();
 
             base.Stop();
+
+            Console.WriteLine(DateTime.Now.ToString("G") + ": " + "Выход из приложения");
 
             Application.Exit();
         }

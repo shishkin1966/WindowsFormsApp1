@@ -1,10 +1,20 @@
 ﻿using ClearArchitecture.SL;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
     public partial class MainForm : WindowsFormsApp1.App.BaseForm
     {
         private IModel<MainForm> _model;
+        private ListBox _listBox;
+
+        public ListBox ListBox
+        {
+            get
+            {
+                return _listBox;
+            }
+        }
 
         public MainForm()
         {
@@ -74,6 +84,9 @@ namespace WindowsFormsApp1.App
 
         private void listToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
+            this.toolStripContainer1.Visible = !this.toolStripContainer1.Visible;
+
+            /*
             var model = Program.SL.Models.GetModel(FormsModel<Forms>.NAME);
             if (model == null)
             {
@@ -87,6 +100,7 @@ namespace WindowsFormsApp1.App
             {
                 ((FormsModel<Forms>)model).GetView().Focus();
             }
+            */
         }
 
         private void newsToolStripMenuItem_Click(object sender, System.EventArgs e)
@@ -105,5 +119,24 @@ namespace WindowsFormsApp1.App
                 ((NewsModel<NewsForm>)model).GetView().Focus();
             }
         }
+
+        private void listBox_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            int index = ListBox.IndexFromPoint(e.Location);
+            if (index != System.Windows.Forms.ListBox.NoMatches)
+            {
+                var model = Program.SL.Models.GetModelByTile((string)ListBox.Items[index]);
+                if (model != null)
+                {
+                    Program.SL.Messenger.AddNotMandatoryMessage(new SetFocusMessage(model.GetName()));
+                    toolStripContainer1.Visible = false; 
+                }
+                else
+                {
+                    (_model as MainModel<MainForm>).Retrieve();
+                }
+            }
+        }
+
     }
 }

@@ -14,13 +14,10 @@ namespace WindowsFormsApp1.App
         {
             base.OnRegisterObserver(subscriber);
 
-            var model = Program.SL.Models.GetModel(FormsModel<Forms>.NAME) as FormsModel<Forms>;
-            if (model != null)
+            var model = Program.SL.Models.GetModel(MainModel<MainForm>.NAME) as MainModel<MainForm>;
+            if (model != null && model.IsValid())
             {
-                if (model.IsValid())
-                {
-                    model.Retrieve();
-                }
+                model.Retrieve();
             }
         }
 
@@ -28,13 +25,10 @@ namespace WindowsFormsApp1.App
         {
             base.OnUnRegisterObserver(subscriber);
 
-            var model = Program.SL.Models.GetModel(FormsModel<Forms>.NAME) as FormsModel<Forms>;
-            if (model != null)
+            var model = Program.SL.Models.GetModel(MainModel<MainForm>.NAME) as MainModel<MainForm>;
+            if (model != null && model.IsValid())
             {
-                if (model.IsValid())
-                {
-                    model.Retrieve();
-                }
+                model.Retrieve();
             }
         }
 

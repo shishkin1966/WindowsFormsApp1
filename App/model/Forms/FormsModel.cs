@@ -35,6 +35,11 @@ namespace WindowsFormsApp1.App
             Program.SL.Observable.RegisterObservable(FormsModelObservable);
         }
 
+        public override void OnDestroy()
+        {
+            Program.SL.Observable.UnRegisterObservable(FormsModelObservable);
+        }
+
         public void Retrieve()
         {
             List<string> list = Program.SL.Models.GetTitles();
