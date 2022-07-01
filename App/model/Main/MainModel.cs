@@ -37,12 +37,10 @@ namespace WindowsFormsApp1.App
             form.ShowDialog();
         }
 
-        /*
         public override void OnDestroy()
         {
-            Program.SL.Observable.UnRegisterObservable(FormsModelObservable);
+            Program.SL.Stop();
         }
-        */
 
         public void Retrieve()
         {

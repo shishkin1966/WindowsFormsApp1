@@ -83,7 +83,7 @@ namespace WindowsFormsApp1.App
 
         public override void Stop()
         {
-            App.SetExit();
+            Console.WriteLine(DateTime.Now.ToString("G") + ": " + "Остановка Service Locator");
 
             base.Stop();
 

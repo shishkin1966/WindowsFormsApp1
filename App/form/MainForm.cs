@@ -42,7 +42,8 @@ namespace WindowsFormsApp1.App
 
         private void ExitMenuItem_Click(object sender, System.EventArgs e)
         {
-            Program.SL.Stop();
+            //Program.SL.Stop();
+            this.Close();
         }
 
         private void OpenMenuItem_Click(object sender, System.EventArgs e)

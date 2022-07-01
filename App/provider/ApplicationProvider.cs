@@ -8,7 +8,6 @@ namespace WindowsFormsApp1.App
     public class ApplicationProvider : AbsProvider, IApplicationProvider
     {
         public const string NAME = "ApplicationProvider";
-        private bool _isExit = false;
         public const string DBNAME = "DB";
 
         public ApplicationProvider(string name) : base(name)
@@ -45,23 +44,6 @@ namespace WindowsFormsApp1.App
         public string GetApplicationFileName() 
         {
             return System.AppDomain.CurrentDomain.FriendlyName;
-        }
-
-        public bool IsExit()
-        {
-            return _isExit;
-        }
-
-        public void OnExit()
-        {
-            Console.WriteLine("Application exit");
-        }
-
-        public void SetExit()
-        {
-            _isExit = true;
-
-            OnExit();
         }
 
         public void Sleep(int milliseconds)
