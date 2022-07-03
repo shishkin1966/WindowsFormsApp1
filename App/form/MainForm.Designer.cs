@@ -1,4 +1,5 @@
 ﻿using ClearArchitecture.SL;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
@@ -199,5 +200,13 @@ namespace WindowsFormsApp1.App
         private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newsToolStripMenuItem;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+
+        public StatusStrip StatusStrip
+        {
+            get
+            {
+                return statusStrip1;
+            }
+        }
     }
 }

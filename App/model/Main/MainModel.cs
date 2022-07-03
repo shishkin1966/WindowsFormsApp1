@@ -1,5 +1,7 @@
 ﻿using ClearArchitecture.SL;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
@@ -39,6 +41,8 @@ namespace WindowsFormsApp1.App
 
         public override void OnDestroy()
         {
+            base.OnDestroy();
+
             Program.SL.Stop();
         }
 
@@ -46,10 +50,23 @@ namespace WindowsFormsApp1.App
         {
             List<string> list = Program.SL.Models.GetTitles();
 
-            GetView().ListBox.Items.Clear();
+            GetView().StatusStrip.Items.Clear();
             foreach (string item in list)
             {
-                GetView().ListBox.Items.Add(item);
+                var button = new Button();
+                button.FlatStyle = FlatStyle.Flat;
+                button.Size = new Size(60, 10);
+                button.Text = item;
+                button.Click += (sender, e) =>
+                {
+                    string title = (sender as Button).Text;
+                    var model = Program.SL.Models.GetModelByTile(title);
+                    if (model != null)
+                    {
+                        Program.SL.Messenger.AddNotMandatoryMessage(new SetFocusMessage(model.GetName()));
+                    }
+                };
+                GetView().StatusStrip.Items.Add(new ToolStripControlHost(button));
             }
         }
     }
