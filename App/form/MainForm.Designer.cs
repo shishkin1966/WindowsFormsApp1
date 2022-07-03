@@ -42,9 +42,7 @@ namespace WindowsFormsApp1.App
             this.nToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.menuStrip1.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -123,13 +121,6 @@ namespace WindowsFormsApp1.App
             this.nToolStripMenuItem.Text = "Нормально";
             this.nToolStripMenuItem.Click += new System.EventHandler(this.nToolStripMenuItem_Click);
             // 
-            // listToolStripMenuItem
-            // 
-            this.listToolStripMenuItem.Name = "listToolStripMenuItem";
-            this.listToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.listToolStripMenuItem.Text = "Список";
-            this.listToolStripMenuItem.Click += new System.EventHandler(this.listToolStripMenuItem_Click);
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
@@ -138,28 +129,10 @@ namespace WindowsFormsApp1.App
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripContainer1
-            // 
-            this.toolStripContainer1.BottomToolStripPanelVisible = false;
-            // 
-            // toolStripContainer1.ContentPanel
-            // 
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(113, 404);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.toolStripContainer1.LeftToolStripPanelVisible = false;
-            this.toolStripContainer1.Location = new System.Drawing.Point(687, 24);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(113, 404);
-            this.toolStripContainer1.TabIndex = 5;
-            this.toolStripContainer1.Text = "toolStripContainer1";
-            this.toolStripContainer1.TopToolStripPanelVisible = false;
-            this.toolStripContainer1.Visible = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -169,20 +142,8 @@ namespace WindowsFormsApp1.App
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
-            _listBox = new System.Windows.Forms.ListBox();
-            _listBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            _listBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            _listBox.FormattingEnabled = true;
-            _listBox.ItemHeight = 16;
-            _listBox.Location = new System.Drawing.Point(0, 0);
-            _listBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDoubleClick);
-
-            toolStripContainer1.ContentPanel.Controls.Add(_listBox);
 
         }
 
@@ -199,7 +160,6 @@ namespace WindowsFormsApp1.App
         private System.Windows.Forms.ToolStripMenuItem nToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
 
         public StatusStrip StatusStrip
         {

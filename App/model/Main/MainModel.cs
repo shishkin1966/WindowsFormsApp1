@@ -54,7 +54,7 @@ namespace WindowsFormsApp1.App
             foreach (string item in list)
             {
                 var button = new Button();
-                button.FlatStyle = FlatStyle.Flat;
+                button.FlatStyle = FlatStyle.Popup;
                 button.Size = new Size(60, 10);
                 button.Text = item;
                 button.Click += (sender, e) =>
