@@ -66,7 +66,12 @@ namespace WindowsFormsApp1.App
                         Program.SL.Messenger.AddNotMandatoryMessage(new SetFocusMessage(model.GetName()));
                     }
                 };
-                GetView().StatusStrip.Items.Add(new ToolStripControlHost(button));
+                var control = new ToolStripControlHost(button);
+                var margin = control.Margin;
+                margin.Left = 1;
+                margin.Right = 1;
+                control.Margin = margin;
+                GetView().StatusStrip.Items.Add(control);
             }
         }
     }
