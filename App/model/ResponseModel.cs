@@ -44,5 +44,12 @@ namespace WindowsFormsApp1.App
         {
             //
         }
+
+        public override void OnDestroy()
+        {
+            base.OnDestroy();
+
+            Program.SL.Executor.CancelRequests(GetName());
+        }
     }
 }
