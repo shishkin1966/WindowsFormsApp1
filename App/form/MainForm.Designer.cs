@@ -40,7 +40,6 @@ namespace WindowsFormsApp1.App
             this.hToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,8 +85,7 @@ namespace WindowsFormsApp1.App
             this.cascadeToolStripMenuItem,
             this.hToolStripMenuItem,
             this.vToolStripMenuItem,
-            this.nToolStripMenuItem,
-            this.listToolStripMenuItem});
+            this.nToolStripMenuItem});
             this.windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
             this.windowsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.windowsToolStripMenuItem.Text = "Окна";
@@ -158,7 +156,6 @@ namespace WindowsFormsApp1.App
         private System.Windows.Forms.ToolStripMenuItem hToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newsToolStripMenuItem;
 
         public StatusStrip StatusStrip
