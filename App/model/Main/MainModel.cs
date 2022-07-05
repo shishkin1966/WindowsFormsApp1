@@ -8,15 +8,6 @@ namespace WindowsFormsApp1.App
     public class MainModel<T> : BaseModel<T> where T: MainForm
     {
         public const string NAME = "MainModel";
-        private readonly FormsModelObservable _observable = new FormsModelObservable();
-
-        public FormsModelObservable FormsModelObservable
-        {
-            get
-            {
-                return _observable;
-            }
-        }
 
         public MainModel(MainForm form) : base(NAME, (IModelView<T>)form)
         {
@@ -33,8 +24,6 @@ namespace WindowsFormsApp1.App
 
             Retrieve();
 
-            Program.SL.Observable.RegisterObservable(FormsModelObservable);
-
             var form = new SplashForm();
             form.ShowDialog();
         }
@@ -47,6 +36,24 @@ namespace WindowsFormsApp1.App
         }
 
         public void Retrieve()
+        {
+            if (!IsValid()) return;
+
+            if (this.GetView().InvokeRequired)
+            {
+                this.GetView().Invoke((MethodInvoker)(() =>
+                {
+                    UiRetrieve();
+                }
+                ));
+            }
+            else
+            {
+                UiRetrieve();
+            }
+        }
+
+        private void UiRetrieve()
         {
             List<string> list = Program.SL.Models.GetTitles();
 
@@ -73,6 +80,7 @@ namespace WindowsFormsApp1.App
                 control.Margin = margin;
                 GetView().StatusStrip.Items.Add(control);
             }
+
         }
     }
 }

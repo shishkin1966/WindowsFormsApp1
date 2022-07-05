@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
-    public abstract class ResponseModel<T> : BaseModel<T>, IResponseListener, IObservableSubscriber where T : Control
+    public abstract class ResponseModel<T> : BaseModel<T>, IResponseListener  where T : Control
     {
         protected ResponseModel(string name, IModelView<T> form) : base(name, form)
         {
@@ -27,23 +27,6 @@ namespace WindowsFormsApp1.App
         }
 
         public abstract void OnUpdateUI(ExtResult result);
-
-        public List<string> GetObservable()
-        {
-            List<string> list = new List<string>();
-            list.Add(FormsModelObservable.NAME);
-            return list;
-        }
-
-        public void OnChangeObservable(string observable, object obj)
-        {
-            //
-        }
-
-        public void OnStopObservable(string observable)
-        {
-            //
-        }
 
         public override void OnDestroy()
         {

@@ -7,16 +7,6 @@ namespace WindowsFormsApp1.App
     {
         public const string NAME = "FormsModel";
 
-        private readonly FormsModelObservable _observable = new FormsModelObservable();
-
-        public FormsModelObservable FormsModelObservable
-        {
-            get
-            {
-                return _observable;
-            }
-        }
-
         public FormsModel(Forms form) : base(NAME, (IModelView<T>)form)
         {
         }
@@ -31,13 +21,6 @@ namespace WindowsFormsApp1.App
             base.OnStart();
 
             Retrieve();
-
-            Program.SL.Observable.RegisterObservable(FormsModelObservable);
-        }
-
-        public override void OnDestroy()
-        {
-            Program.SL.Observable.UnRegisterObservable(FormsModelObservable);
         }
 
         public void Retrieve()
