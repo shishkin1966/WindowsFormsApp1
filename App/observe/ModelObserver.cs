@@ -2,18 +2,21 @@
 
 namespace WindowsFormsApp1.App
 {
-    public class ModelObservable : BaseObservable
+    public class ModelObserver : IObserver
     {
-        public const string NAME = "ModelObservable";
+        public const string NAME = "ModelObserver";
 
-        public ModelObservable(): base(NAME)
+        public ModelObserver()
         {
         }
 
-        public override void OnChangeObservable(object obj)
+        public string GetName()
         {
-            base.OnChangeObservable(obj);
+            return NAME;
+        }
 
+        public void OnChangeObservable(object obj)
+        {
             var model = Program.SL.Models.GetModel(MainModel<MainForm>.NAME) as MainModel<MainForm>;
             if (model != null && model.IsValid())
             {

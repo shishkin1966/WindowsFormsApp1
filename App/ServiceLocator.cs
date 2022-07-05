@@ -80,7 +80,7 @@ namespace WindowsFormsApp1.App
             RegisterProvider(ExecutorUnion.NAME);
             RegisterProvider(DbProvider.NAME);
 
-            Models.SetObservable(new ModelObservable());
+            Models.AddObserver(new ModelObserver());
         }
 
         public override void Stop()
