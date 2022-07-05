@@ -113,12 +113,6 @@
     <Compile Include="App\form\NewsForm.Designer.cs">
       <DependentUpon>NewsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="App\form\Forms.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="App\form\Forms.Designer.cs">
-      <DependentUpon>Forms.cs</DependentUpon>
-    </Compile>
     <Compile Include="App\form\SplashForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,7 +127,6 @@
     </Compile>
     <Compile Include="App\model\BaseModel.cs" />
     <Compile Include="App\model\Document\DocumentModel.cs" />
-    <Compile Include="App\model\Forms\FormsModel.cs" />
     <Compile Include="App\model\Main\MainModel.cs" />
     <Compile Include="App\model\News\NewsModel.cs" />
     <Compile Include="App\model\ResponseModel.cs" />
@@ -153,9 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="App\form\DocumentForm.resx">
       <DependentUpon>DocumentForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App\form\Forms.resx">
-      <DependentUpon>Forms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="App\form\NewsForm.resx">
       <DependentUpon>NewsForm.cs</DependentUpon>
