@@ -24,7 +24,7 @@ namespace WindowsFormsApp1.App
             }
         }
 
-        public void OnStop()
+        public void OnStopObservable()
         {
             //
         }
