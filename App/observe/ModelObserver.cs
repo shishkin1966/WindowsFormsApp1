@@ -23,5 +23,10 @@ namespace WindowsFormsApp1.App
                 model.Retrieve();
             }
         }
+
+        public void OnStop()
+        {
+            //
+        }
     }
 }
