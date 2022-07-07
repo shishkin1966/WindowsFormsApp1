@@ -55,6 +55,8 @@ namespace WindowsFormsApp1.App
 
         private void UiRetrieve()
         {
+            if (!IsValid()) return;
+
             List<string> list = Program.SL.Models.GetTitles();
 
             GetView().StatusStrip.Items.Clear();

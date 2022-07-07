@@ -18,7 +18,7 @@ namespace WindowsFormsApp1.App
         public void OnChangeObservable(object obj)
         {
             var model = Program.SL.Models.GetModel(MainModel<MainForm>.NAME) as MainModel<MainForm>;
-            if (model != null && model.IsValid())
+            if (model != null)
             {
                 model.Retrieve();
             }
