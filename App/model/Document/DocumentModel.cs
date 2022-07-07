@@ -27,11 +27,13 @@ namespace WindowsFormsApp1.App
 
             GetView().ShowProgressBar();
             GetView().SetStatus("Загрузка ...");
-            Program.SL.Executor.PutRequest(new GetDocumentsRequest(connection, NAME, NAME, 0));
+            Program.SL.Executor.PutRequest(new GetDocumentsRequest(connection, GetName(), GetName(), 0));
         }
 
         public override void OnUpdateUI(ExtResult result)
         {
+            if (!IsValid()) return;
+
             GetView().HideProgressBar();
             if (result.HasError())
             {
@@ -39,16 +41,15 @@ namespace WindowsFormsApp1.App
             }
             else
             {
-                if (result.GetName() == GetDocumentsRequest.NAME) 
+                if (result.GetName() == GetDocumentsRequest.NAME)
                 {
                     DataSet ds = (DataSet)result.GetData();
                     GetView().DataGridView.ReadOnly = true;
                     GetView().DataGridView.AllowUserToAddRows = false;
                     GetView().DataGridView.DataSource = ds.Tables["Posts"];
-                    GetView().SetStatus("Всего: "+GetView().DataGridView.RowCount.ToString()+" строк(а)");
+                    GetView().SetStatus("Всего: " + GetView().DataGridView.RowCount.ToString() + " строк(а)");
                 }
             }
         }
-
     }
 }

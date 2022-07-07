@@ -28,7 +28,7 @@ namespace WindowsFormsApp1.App
 
         public string GetApplicationName()
         {
-            return System.Reflection.Assembly.GetExecutingAssembly().GetName().Name; 
+            return System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
         }
 
         public string GetApplicationFullPath()
@@ -41,7 +41,7 @@ namespace WindowsFormsApp1.App
             return System.AppContext.BaseDirectory;
         }
 
-        public string GetApplicationFileName() 
+        public string GetApplicationFileName()
         {
             return System.AppDomain.CurrentDomain.FriendlyName;
         }

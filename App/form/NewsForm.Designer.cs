@@ -93,7 +93,7 @@ namespace WindowsFormsApp1.App
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
 
-       public void HideProgressBar()
+        public void HideProgressBar()
         {
             toolStripProgressBar1.Visible = false;
         }

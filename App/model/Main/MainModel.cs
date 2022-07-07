@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
-    public class MainModel<T> : BaseModel<T> where T: MainForm
+    public class MainModel<T> : BaseModel<T> where T : MainForm
     {
         public const string NAME = "MainModel";
 
@@ -82,7 +82,6 @@ namespace WindowsFormsApp1.App
                 control.Margin = margin;
                 GetView().StatusStrip.Items.Add(control);
             }
-
         }
     }
 }

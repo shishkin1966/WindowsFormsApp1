@@ -1,10 +1,9 @@
 ﻿using ClearArchitecture.SL;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
-    public abstract class ResponseModel<T> : BaseModel<T>, IResponseListener  where T : Control
+    public abstract class ResponseModel<T> : BaseModel<T>, IResponseListener where T : Control
     {
         protected ResponseModel(string name, IModelView<T> form) : base(name, form)
         {
@@ -12,6 +11,8 @@ namespace WindowsFormsApp1.App
 
         public void Response(ExtResult result)
         {
+            if (!IsValid()) return;
+
             if (this.GetView().InvokeRequired)
             {
                 this.GetView().Invoke((MethodInvoker)(() =>

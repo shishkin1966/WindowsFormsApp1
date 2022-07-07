@@ -1,5 +1,4 @@
-﻿
-using ClearArchitecture.SL;
+﻿using ClearArchitecture.SL;
 using System.Data;
 using System.Windows.Forms;
 
@@ -28,12 +27,13 @@ namespace WindowsFormsApp1.App
 
             GetView().ShowProgressBar();
             GetView().SetStatus("Загрузка ...");
-            Program.SL.Executor.PutRequest(new GetNewsRequest(connection, NAME, NAME, 0));
+            Program.SL.Executor.PutRequest(new GetNewsRequest(connection, GetName(), GetName(), 0));
         }
-
 
         public override void OnUpdateUI(ExtResult result)
         {
+            if (!IsValid()) return;
+
             GetView().HideProgressBar();
             if (result.HasError())
             {
@@ -51,6 +51,5 @@ namespace WindowsFormsApp1.App
                 }
             }
         }
-
     }
 }

@@ -40,19 +40,19 @@ namespace WindowsFormsApp1.App
         private void OpenMenuItem_Click(object sender, System.EventArgs e)
         {
             var model = Program.SL.Models.GetModel(DocumentModel<DocumentForm>.NAME);
-            if (model == null) {
+            if (model == null)
+            {
                 var form = new DocumentForm
                 {
                     MdiParent = this
                 };
                 form.Show();
-            } 
+            }
             else
             {
                 ((DocumentModel<DocumentForm>)model).GetView().Focus();
             }
         }
-
 
         private void cascadeToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
@@ -74,7 +74,7 @@ namespace WindowsFormsApp1.App
             this.LayoutMdi(System.Windows.Forms.MdiLayout.ArrangeIcons);
         }
 
-       private void newsToolStripMenuItem_Click(object sender, System.EventArgs e)
+        private void newsToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var model = Program.SL.Models.GetModel(NewsModel<NewsForm>.NAME);
             if (model == null)
@@ -90,6 +90,5 @@ namespace WindowsFormsApp1.App
                 ((NewsModel<NewsForm>)model).GetView().Focus();
             }
         }
-
     }
 }
