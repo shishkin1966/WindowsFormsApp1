@@ -54,26 +54,6 @@ namespace WindowsFormsApp1.App
             }
         }
 
-        private void cascadeToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            this.LayoutMdi(System.Windows.Forms.MdiLayout.Cascade);
-        }
-
-        private void hToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            this.LayoutMdi(System.Windows.Forms.MdiLayout.TileVertical);
-        }
-
-        private void vToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            this.LayoutMdi(System.Windows.Forms.MdiLayout.TileHorizontal);
-        }
-
-        private void nToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            this.LayoutMdi(System.Windows.Forms.MdiLayout.ArrangeIcons);
-        }
-
         private void newsToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var model = Program.SL.Models.GetModel(NewsModel<NewsForm>.NAME);

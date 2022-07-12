@@ -35,11 +35,6 @@ namespace WindowsFormsApp1.App
             this.OpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -49,8 +44,7 @@ namespace WindowsFormsApp1.App
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OpenMenuItem,
             this.newsToolStripMenuItem,
-            this.ExitMenuItem,
-            this.windowsToolStripMenuItem});
+            this.ExitMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -77,47 +71,6 @@ namespace WindowsFormsApp1.App
             this.ExitMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ExitMenuItem.Text = "Выход";
             this.ExitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
-            // 
-            // windowsToolStripMenuItem
-            // 
-            this.windowsToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.windowsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cascadeToolStripMenuItem,
-            this.hToolStripMenuItem,
-            this.vToolStripMenuItem,
-            this.nToolStripMenuItem});
-            this.windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
-            this.windowsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.windowsToolStripMenuItem.Text = "Окна";
-            this.windowsToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
-            // 
-            // cascadeToolStripMenuItem
-            // 
-            this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.cascadeToolStripMenuItem.Text = "Каскадно";
-            this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
-            // 
-            // hToolStripMenuItem
-            // 
-            this.hToolStripMenuItem.Name = "hToolStripMenuItem";
-            this.hToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.hToolStripMenuItem.Text = "Горизонтально";
-            this.hToolStripMenuItem.Click += new System.EventHandler(this.hToolStripMenuItem_Click);
-            // 
-            // vToolStripMenuItem
-            // 
-            this.vToolStripMenuItem.Name = "vToolStripMenuItem";
-            this.vToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.vToolStripMenuItem.Text = "Вертикально";
-            this.vToolStripMenuItem.Click += new System.EventHandler(this.vToolStripMenuItem_Click);
-            // 
-            // nToolStripMenuItem
-            // 
-            this.nToolStripMenuItem.Name = "nToolStripMenuItem";
-            this.nToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.nToolStripMenuItem.Text = "Нормально";
-            this.nToolStripMenuItem.Click += new System.EventHandler(this.nToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -151,11 +104,6 @@ namespace WindowsFormsApp1.App
         private System.Windows.Forms.ToolStripMenuItem OpenMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExitMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripMenuItem windowsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newsToolStripMenuItem;
 
         public StatusStrip StatusStrip
