@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.App
 {
-    public abstract class ResponseModel<T> : BaseModel<T>, IResponseListener where T : Control
+    public abstract class ResponseModel<T> : BaseModel<T>, IResponseListener, IError where T : Control
     {
         protected ResponseModel(string name, IModelView<T> form) : base(name, form)
         {
@@ -34,6 +34,11 @@ namespace WindowsFormsApp1.App
             base.OnDestroy();
 
             Program.SL.Executor.CancelRequests(GetName());
+        }
+
+        public void OnError(ExtError error)
+        {
+            MessageBox.Show("Ошибка", error.GetErrorText());
         }
     }
 }

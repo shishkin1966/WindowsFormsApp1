@@ -37,7 +37,7 @@ namespace WindowsFormsApp1.App
             GetView().HideProgressBar();
             if (result.HasError())
             {
-                MessageBox.Show("Ошибка", result.GetErrorText());
+                OnError(result.GetError());
             }
             else
             {
