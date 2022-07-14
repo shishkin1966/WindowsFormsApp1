@@ -78,6 +78,7 @@ namespace WindowsFormsApp1.App
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(800, 22);
             this.statusStrip1.TabIndex = 3;
+            this.statusStrip1.SizingGrip = true;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // MainForm

@@ -60,15 +60,18 @@ namespace WindowsFormsApp1.App
             List<string> list = Program.SL.Models.GetTitles();
 
             GetView().StatusStrip.Items.Clear();
+            GetView().StatusStrip.LayoutStyle = ToolStripLayoutStyle.Flow;
+
             foreach (string item in list)
             {
                 var button = new Button();
+
                 button.FlatStyle = FlatStyle.Popup;
-                button.Size = new Size(60, 10);
                 button.Text = item;
+                button.Tag = item;
                 button.Click += (sender, e) =>
                 {
-                    string title = (sender as Button).Text;
+                    string title = (string)(sender as Button).Tag;
                     var model = Program.SL.Models.GetModelByTile(title);
                     if (model != null)
                     {
@@ -79,6 +82,7 @@ namespace WindowsFormsApp1.App
                 var margin = control.Margin;
                 margin.Left = 1;
                 margin.Right = 1;
+                margin.Top = -2;
                 control.Margin = margin;
                 GetView().StatusStrip.Items.Add(control);
             }
