@@ -44,13 +44,15 @@ namespace WindowsFormsApp1.App
             {
                 var form = new DocumentForm
                 {
-                    MdiParent = this
+                    MdiParent = this,
+                    WindowState = FormWindowState.Maximized
                 };
                 form.Show();
             }
             else
             {
                 ((DocumentModel<DocumentForm>)model).GetView().Focus();
+                ((DocumentModel<DocumentForm>)model).GetView().WindowState = FormWindowState.Maximized;
             }
         }
 
@@ -61,13 +63,15 @@ namespace WindowsFormsApp1.App
             {
                 var form = new NewsForm
                 {
-                    MdiParent = this
+                    MdiParent = this,
+                    WindowState = FormWindowState.Maximized
                 };
                 form.Show();
             }
             else
             {
                 ((NewsModel<NewsForm>)model).GetView().Focus();
+                ((DocumentModel<DocumentForm>)model).GetView().WindowState = FormWindowState.Maximized;
             }
         }
     }

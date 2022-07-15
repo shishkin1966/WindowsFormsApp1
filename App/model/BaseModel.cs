@@ -18,6 +18,10 @@ namespace WindowsFormsApp1.App
         {
             if (message.GetName() == SetFocusMessage.NAME)
             {
+                if (GetView() is Form)
+                {
+                    (GetView() as Form).WindowState = FormWindowState.Maximized;
+                }
                 if (GetView() is Control)
                 {
                     (GetView() as Control).Focus();

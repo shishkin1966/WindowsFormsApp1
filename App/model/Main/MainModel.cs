@@ -61,6 +61,7 @@ namespace WindowsFormsApp1.App
 
             GetView().StatusStrip.Items.Clear();
             GetView().StatusStrip.LayoutStyle = ToolStripLayoutStyle.Flow;
+            GetView().StatusStrip.Items.Add("Окна");
 
             foreach (string item in list)
             {
